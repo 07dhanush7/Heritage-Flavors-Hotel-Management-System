@@ -1,0 +1,232 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.admin-main {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0A0A0F 0%, #1E2721 50%, #0B1F1A 100%);
+}
+
+.admin-sidebar {
+    width: 250px;
+    background: linear-gradient(135deg, #1E2721 0%, #0A0A0F 100%);
+    color: #F5F5DC;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.admin-sidebar h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.admin-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.admin-sidebar li {
+    padding: 12px 15px;
+    margin: 8px 0;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s ease;
+    font-size: 14px;
+}
+
+.admin-sidebar li:hover,
+.admin-sidebar li.active {
+    background: rgba(255, 179, 71, 0.15);
+    border-left: 3px solid #FFB347;
+    padding-left: 12px;
+}
+
+.logout-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: auto;
+    background: linear-gradient(135deg, #FFB347 0%, #C87F0A 100%);
+    color: #1E2721;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: linear-gradient(135deg, #C87F0A 0%, #FFB347 100%);
+    transform: translateY(-2px);
+}
+
+.admin-content {
+    margin-left: 250px;
+    flex: 1;
+    padding: 30px;
+}
+
+.admin-content h1 {
+    margin-bottom: 50px;
+    font-size: 32px;
+    color: #FFB347;
+    font-weight: 700;
+}
+
+.dashboard-cards {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 250px;
+    background: linear-gradient(135deg, rgba(245, 245, 220, 0.95) 0%, rgba(245, 245, 220, 0.9) 100%);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: 0.3s ease;
+    border: 1px solid rgba(255, 179, 71, 0.3);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #1E2721;
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 36px;
+    font-weight: bold;
+    color: #FFB347;
+}
+
+.card.pending-card {
+    border-left: 4px solid #ffc107;
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.05), rgba(255, 193, 7, 0.02));
+}
+
+.card.pending-card p {
+    color: #ffc107;
+}
+
+.card.completed-card {
+    border-left: 4px solid #28a745;
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.05), rgba(40, 167, 69, 0.02));
+}
+
+.card.completed-card p {
+    color: #28a745;
+}
+
+.card.cancelled-card {
+    border-left: 4px solid #dc3545;
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.05), rgba(220, 53, 69, 0.02));
+}
+
+.card.cancelled-card p {
+    color: #dc3545;
+}
+
+.delete-btn,
+.edit-btn {
+  padding: 6px 12px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.3s ease;
+}
+
+.delete-btn {
+  background: #d9534f;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: #c9302c;
+}
+
+.edit-btn {
+  background: #5cb85c;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #4cae4c;
+}
+
+.status-select {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s ease;
+}
+
+.status-select:focus {
+  outline: none;
+    border-color: #FFB347;
+    box-shadow: 0 0 5px rgba(255, 179, 71, 0.3);
+@media (max-width: 900px) {
+    .admin-sidebar {
+        width: 200px;
+    }
+
+    .admin-content {
+        margin-left: 200px;
+        padding: 40px;
+    }
+
+    .dashboard-cards {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+  .admin-sidebar {
+    transform: translateX(-100%);
+    width: 240px;
+  }
+
+  .admin-sidebar.active {
+    transform: translateX(0);
+  }
+
+  .admin-content {
+    margin-left: 0;
+    padding: 30px 20px;
+  }
+
+  .dashboard-cards {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .card {
+    padding: 30px;
+  }
+}
+}

@@ -1,0 +1,137 @@
+.menu-container {
+  padding: 80px 10%;
+  background: linear-gradient(
+  to right,
+  #0B0A07,
+  #1E2721
+);
+  color: white;
+  min-height: 100vh;
+}
+
+/* new banner container for overlay */
+.menu-banner-container {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.menu-banner {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.menu-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.menu-heading {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.menu-tabs {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.menu-tabs button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  background: #1e293b;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.menu-tabs button:hover {
+  background: #334155;
+}
+
+.active-tab {
+  background: #facc15 !important;
+  color: black !important;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.menu-card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 15px;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+}
+
+.menu-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-card li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s ease;
+}
+
+.menu-card li:hover {
+  transform: translateX(6px);
+}
+
+.item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.veg-indicator,
+.nonveg-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.veg-indicator {
+  background: #22c55e;
+}
+
+.nonveg-indicator {
+  background: #ef4444;
+}
+
+.price {
+  transition: 0.3s ease;
+}
+
+.menu-card li:hover .price {
+  color: #facc15;
+  font-weight: bold;
+  transform: scale(1.1);
+}

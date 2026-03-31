@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  background: linear-gradient(
+    90deg,
+    #0A0A0F 0%,
+    #1E2721 50%,
+    #261205 100%
+  );
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0 40px;
+}
+
+/* LOGO */
+.logo-text {
+  color: #F5F5DC;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.logo-text:hover {
+  color: #FFB347;
+}
+
+/* LINKS */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-link {
+  color: #F5F5DC;
+  text-decoration: none;
+  font-size: 15px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #FFB347;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #FFB347;
+  transition: 0.3s;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.reserve-btn {
+  background: linear-gradient(135deg, #FFB347, #C87F0A);
+  padding: 8px 18px;
+  border-radius: 25px;
+  color: #0A0A0F;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.reserve-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 179, 71, 0.5);
+}
+
+.logout-btn {
+  background: linear-gradient(135deg, #FFB347, #C87F0A);
+  padding: 8px 18px;
+  border: none;
+  border-radius: 25px;
+  color: #0A0A0F;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 15px;
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 179, 71, 0.5);
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #F5F5DC;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: #0A0A0F;
+    display: none;
+    padding: 20px 0;
+    gap: 10px;
+  }
+
+  .nav-links li {
+    padding: 10px 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .logout-btn {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+  }
+}

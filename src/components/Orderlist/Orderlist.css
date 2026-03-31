@@ -1,0 +1,231 @@
+:root {
+  --gold: #E9B44C;
+  --dark-bg: #0B0A07;
+  --card-bg: #1A1A1A;
+  --text-main: #FFFFFF;
+  --text-dim: #A0A0A0;
+}
+
+.heritage-menu {
+  background-color: var(--dark-bg);
+  color: var(--text-main);
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Hero Banner */
+.menu-hero {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.menu-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.9));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-hero__title {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  color: var(--gold);
+}
+
+/* Navigation Tabs */
+.menu-nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu-nav__btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 10px 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 30px;
+}
+
+.menu-nav__btn.is-active {
+  background: var(--gold);
+  color: black;
+  border-color: var(--gold);
+}
+
+/* Layout */
+.menu-layout {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 30px;
+  max-width: 1300px;
+  margin: -50px auto 0;
+  padding: 0 20px 50px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Menu Grid */
+.menu-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+.menu-section {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid #333;
+}
+
+.menu-section__title {
+  color: var(--gold);
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px dashed #333;
+}
+
+.menu-item__info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+.indicator.veg { background: #4CAF50; box-shadow: 0 0 5px #4CAF50; }
+.indicator.nonveg { background: #F44336; box-shadow: 0 0 5px #F44336; }
+
+.add-to-cart-btn {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.qty-picker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #333;
+  border-radius: 5px;
+  padding: 2px 8px;
+}
+
+.qty-picker button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Cart Sidebar */
+.menu-cart {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 15px;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+  border: 1px solid var(--gold);
+}
+
+.cart-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.cart-total {
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  margin-top: 20px;
+}
+
+.grand-total {
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+
+.order-btn {
+  width: 100%;
+  background: var(--gold);
+  border: none;
+  padding: 15px;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+
+.checkout-section {
+  margin-top: 20px;
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checkout-section input,
+.checkout-section textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  width: 100%;
+  box-sizing: border-box;
+  background: #121212;
+  color: white;
+}
+
+.confirm-btn {
+  background: var(--gold);
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .menu-layout { grid-template-columns: 1fr; }
+  .menu-display { grid-template-columns: 1fr; }
+}
